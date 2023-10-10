@@ -7,10 +7,9 @@ CREATE TABLE IF NOT EXISTS Albums (
 
 CREATE TABLE IF NOT EXISTS Sounds (
     sound_id SERIAL(40) PRIMARY KEY,
-    album_id VARCHAR(40) UNIQUE NOT NULL REFERENCES Albums(album_id),
+    album_id VARCHAR(40) NOT NULL REFERENCES Albums(album_id),
     name VARCHAR(40) NOT NULL,
-    time INTEGER NOT NULL,
-    album VARCHAR(20) NOT NULL
+    time INTEGER NOT NULL
 );
 
 
@@ -29,7 +28,6 @@ CREATE TABLE IF NOT EXISTS Executors (
 
 CREATE TABLE IF NOT EXISTS Genres (
     genre_id SERIAL(40) PRIMARY KEY,
-    list VARCHAR(40) NOT NULL,
     name VARCHAR(40) NOT NULL
 );
 
